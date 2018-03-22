@@ -985,6 +985,8 @@ class MyFrame(wx.Frame):
        chislo_stavok = 0
        sum_of_stavok = 0
        razmer_stavki = 0
+       pribul_same = 0
+       pribul_same2 = 0
        while ( steps < chicloVrach):
            screen_control_2 = self.ScreenShotChisla('coord_snapshot_control.txt')
            p_cntr_2 = screen_control_2.GetData()
@@ -1125,6 +1127,7 @@ class MyFrame(wx.Frame):
                            propusk_sam = propusk_sam + 2
                            propusk_lev = propusk_lev - 1
                            propusk_prv = propusk_prv - 1
+                           pribul_same = pribul_same + 0.23
                            # index_same = same/steps
                            # index_lev = levo/steps
                            # index_prv = pravo/steps
@@ -1141,7 +1144,7 @@ class MyFrame(wx.Frame):
                            propusk_prv = propusk_prv + 2
                            propusk_sam = propusk_sam - 1
                            propusk_lev = propusk_lev - 1
-
+                           pribul_same = pribul_same - 0.13
                            # index_same = same / steps
                            # index_lev = levo / steps
                            # index_prv = pravo / steps
@@ -1158,6 +1161,7 @@ class MyFrame(wx.Frame):
                            propusk_lev = propusk_lev + 2
                            propusk_sam = propusk_sam - 1
                            propusk_prv = propusk_prv - 1
+                           pribul_same = pribul_same - 0.13
                            # index_same = same / steps
                            # index_lev = levo / steps
                            # index_prv = pravo / steps
@@ -1174,6 +1178,7 @@ class MyFrame(wx.Frame):
                            propusk_sam = propusk_sam + 2
                            propusk_lev = propusk_lev - 1
                            propusk_prv = propusk_prv - 1
+                           pribul_same = pribul_same + 0.23
                            # index_same = same / steps
                            # index_lev = levo / steps
                            # index_prv = pravo / steps
@@ -1190,6 +1195,7 @@ class MyFrame(wx.Frame):
                            propusk_prv = propusk_prv + 2
                            propusk_sam = propusk_sam - 1
                            propusk_lev = propusk_lev - 1
+                           pribul_same = pribul_same - 0.13
                            # index_same = same / steps
                            # index_lev = levo / steps
                            # index_prv = pravo / steps
@@ -1206,6 +1212,7 @@ class MyFrame(wx.Frame):
                            propusk_lev = propusk_lev + 2
                            propusk_sam = propusk_sam - 1
                            propusk_prv = propusk_prv - 1
+                           pribul_same = pribul_same - 0.13
                            # index_same = same / steps
                            # index_lev = levo / steps
                            # index_prv = pravo / steps
@@ -1223,6 +1230,7 @@ class MyFrame(wx.Frame):
                            propusk_sam = propusk_sam + 2
                            propusk_lev = propusk_lev - 1
                            propusk_prv = propusk_prv - 1
+                           pribul_same = pribul_same + 0.23
                            # index_same = same / steps
                            # index_lev = levo / steps
                            # index_prv = pravo / steps
@@ -1239,7 +1247,7 @@ class MyFrame(wx.Frame):
                            propusk_prv = propusk_prv + 2
                            propusk_sam = propusk_sam - 1
                            propusk_lev = propusk_lev - 1
-
+                           pribul_same = pribul_same - 0.13
                            # index_same = same / steps
                            # index_lev = levo / steps
                            # index_prv = pravo / steps
@@ -1256,6 +1264,7 @@ class MyFrame(wx.Frame):
                            propusk_lev = propusk_lev + 2
                            propusk_sam = propusk_sam - 1
                            propusk_prv = propusk_prv - 1
+                           pribul_same = pribul_same - 0.13
                            # index_same = same / steps
                            # index_lev = levo / steps
                            # index_prv = pravo / steps
@@ -1270,6 +1279,7 @@ class MyFrame(wx.Frame):
                            propusk_sam = propusk_sam + 1
                            propusk_lev = propusk_lev + 1
                            propusk_prv = propusk_prv + 1
+                           pribul_same = pribul_same + 0.23
                        if ((old_key == 2) or (old_key == 5) or (old_key == 8) or (old_key == 11) or (old_key == 14) or (
                                    old_key == 17) or (old_key == 20) or (old_key == 23) or (old_key == 26) or (
                            old_key == 29) or (
@@ -1279,6 +1289,7 @@ class MyFrame(wx.Frame):
                            propusk_sam = propusk_sam + 1
                            propusk_lev = propusk_lev + 1
                            propusk_prv = propusk_prv + 1
+                           pribul_same = pribul_same + 0.23
                        if ((old_key == 3) or (old_key == 6) or (old_key == 9) or (old_key == 12) or (old_key == 15) or (
                                    old_key == 18) or (old_key == 21) or (old_key == 24) or (old_key == 27) or (
                            old_key == 30) or (
@@ -1288,15 +1299,17 @@ class MyFrame(wx.Frame):
                            propusk_sam = propusk_sam + 1
                            propusk_lev = propusk_lev + 1
                            propusk_prv = propusk_prv + 1
+                           pribul_same = pribul_same + 0.23
                        if (old_key == 0) and (key1 == 0):
                            dub_nolik = dub_nolik + 1
                            propusk_sam = propusk_sam + 1
                            propusk_lev = propusk_lev + 1
                            propusk_prv = propusk_prv + 1
+                           pribul_same = pribul_same + 0.23
                    # print(steps,'old:',old_key, ' key:',key1, '--- sam: ', same, ' lev: ', levo, ' prv: ', pravo, ' nol: ', nolik)
                    old_key = key1
                    print(steps, ' sam_summa ', propusk_sam, ' lev_summa ', propusk_lev, ' prv_summa ', propusk_prv)
-                   if propusk_sam < -11:
+                   if (pribul_same  < - 1.9) or (pribul_same  > 1.7):
                        konec = True
                        to_game = False
                    if not konec:
@@ -1477,7 +1490,9 @@ class MyFrame(wx.Frame):
                p = screen.GetData()
                prodolji = wx.Image('prodoljenie.bmp', type=wx.BITMAP_TYPE_ANY)
                p2 = prodolji.GetData()
-               if p == p2:
+               prodolji2 = wx.Image('prodoljenie2.bmp', type=wx.BITMAP_TYPE_ANY)
+               p2_2 = prodolji2.GetData()
+               if (p == p2) or (p == p2_2) :
                    self.mousePos(dataMouse[45][1])
                    chet = chet+1
                    file_obj2.write(str(chet) + '\n')

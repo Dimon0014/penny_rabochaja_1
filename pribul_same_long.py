@@ -532,7 +532,7 @@ levo = 0
 same = 0
 pribul=0
 global_pribul_same = 0
-for i in range(94, 105):  # while (ik < 1): # количество файлов
+for i in range(105, 106):  # while (ik < 1): # количество файлов
     # ik = ik + 1
     # file_obj = open('200cikl_ochh.txt', 'w')
     # file_obj.close()
