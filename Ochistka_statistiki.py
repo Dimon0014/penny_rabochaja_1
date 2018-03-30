@@ -4,7 +4,7 @@ import os
 # with open('real_01_ochistka.txt', 'r') as f:  # извлекаем  из файла
 #     data2 = json.load(f)
 # print(data2)
-k = 104                   ##
+k = 153                   ##
 proverka = True
 while proverka:
     k =k+1
